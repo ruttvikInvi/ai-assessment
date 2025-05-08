@@ -11,6 +11,7 @@ export function DashboardSidebar() {
   const { user, logout } = useAuth()
 
   const isActive = (path: string) => {
+    console.log("path", {pathname, path})
     return pathname === path
   }
 
@@ -20,21 +21,21 @@ export function DashboardSidebar() {
 
       <nav className="space-y-2 flex-1">
         <Link href="/dashboard" passHref>
-          <Button variant={isActive("/dashboard") ? "secondary" : "ghost"} className="w-full justify-start">
+          <Button variant={isActive("/dashboard") ? "default" : "ghost"} className="w-full justify-start">
             <Home className="mr-2 h-4 w-4" />
             Dashboard
           </Button>
         </Link>
 
         <Link href="/drag-drop" passHref>
-          <Button variant={isActive("/drag-drop") ? "secondary" : "ghost"} className="w-full justify-start">
+          <Button variant={isActive("/drag-drop") ? "default" : "ghost"} className="w-full justify-start">
             <User className="mr-2 h-4 w-4" />
             Drag Drop
           </Button>
         </Link>
 
         <Link href="/infinite-scroll" passHref>
-          <Button variant={isActive("/infinite-scroll") ? "secondary" : "ghost"} className="w-full justify-start">
+          <Button variant={isActive("/infinite-scroll") ? "default" : "ghost"} className="w-full justify-start">
             <Settings className="mr-2 h-4 w-4" />
             Infinite Scroll
           </Button>

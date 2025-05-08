@@ -126,7 +126,7 @@ const CandidateCard = ({
   ref={drag}
   className={`${isDragging ? "opacity-50" : "opacity-100"} cursor-move`}
 >
-  <Card className={`mb-2 ${isAssigned ? "border-green-200 bg-green-50" : ""}`}>
+  <Card className={`mb-2 ${isAssigned ? "border-green-200 bg-green-50" : ""} w-300`}>
     <CardContent className="p-3 flex items-center gap-3">
       <Avatar>
         <AvatarImage src={candidate.avatar || "/placeholder.svg"} alt={candidate.name} />
@@ -297,7 +297,7 @@ export default function InterviewScheduler() {
               <h2 className="text-lg font-semibold">Available Candidates</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+            <div className="flex flex-wrap gap-3">
               {candidates.map((candidate) => (
                 <CandidateCard key={candidate.id} candidate={candidate} />
               ))}
