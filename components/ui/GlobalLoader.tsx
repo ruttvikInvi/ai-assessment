@@ -11,8 +11,8 @@ export function GlobalLoader() {
   if (!isLoading) return null
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <div className="flex items-center justify-center p-3 bg-background border rounded-full shadow-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/50">
+      <div className="flex items-center justify-center p-3 bg-background/80 border rounded-full shadow-lg backdrop-blur-sm">
         <Loader2 className="h-6 w-6 animate-spin text-primary" />
       </div>
     </div>
